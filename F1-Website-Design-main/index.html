@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<head>
+    <title>F1 - WEBSITE PROJEKT</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" href="img/m_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        /* Dodaj własne style i animacje */
+        #tooltip .icon {
+            margin: 0 10px;
+            color: #334;
+            background-color: #ddd;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .icon {
+            width: 5px;
+            height: 50px;
+            background-color: blue;
+            transition: transform .2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+        .icon {
+            margin: 10px;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            width: 40px;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            transition: transform .2s;
+        }
+
+        .logo:hover {
+              transform: scale(0.8);
+        }
+        nav {
+                background-color: #222;
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin: 0 15px;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                font-weight: bold;
+                text-decoration: none;
+                color: #ccc;
+                transition: color 0.3s, border-bottom-color 0.3s;
+                border-bottom: 2px solid transparent;
+                position: relative;
+            }
+
+            nav ul li a:before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #fff;
+                visibility: hidden;
+                transition: all 0.3s ease-in-out;
+            }
+
+            nav ul li a:hover {
+                color: #fff;
+                border-bottom-color: #fff;
+            }
+    
+            nav ul li a:hover:before {
+                visibility: visible;
+                width: 100%;
+            }
+
+            nav ul li a.active {
+                color: #fff;
+                border-bottom-color: #fff;
+            }
+        .nav {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .nav:hover {
+            transform: translateY(-3px);
+        }
+        .header {
+            background-image: url('image/photo13.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .header__text {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            transition: transform .2s;
+        }
+        .header__text:hover {
+              transform: scale(0.8);
+        }    
+        .header__text--colorized {
+            color: #f55;
+            font-weight: bold;
+        }
+        .header__cta {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            background-color: #f55;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            transition: transform .2s;
+        }
+        .header__cta:hover {
+              transform: scale(1.2);
+        }
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section__heading {
+            font-size: 2rem;
+            color: #f55;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .section__heading:hover {
+            transform: scale(1.2);
+        }
+        .about-us__textbox {
+            max-width: 600px;
+            margin: 0 auto;
+        }    
+        .about-us__text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #333;
+            transition: transform .2s;
+        }
+        .about-us__test:hover {
+              transform: scale(1.2);
+        }
+        .about-us__link {
+            color: #f55;
+            text-decoration: underline;
+            transition: transform .2s;
+        }
+        .about-us__link:hover {
+              transform: scale(1.2);
+        }
+        .about-us__box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 2rem;
+            transition: transform .2s;
+        }
+        .about-us__box:hover {
+              transform: scale(1.2);
+        }
+        .about-us__img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        .footer__text {
+            font-size: 1rem;
+            color: #fff;
+        }
+        .footer__link {
+            color: #f55;
+            text-decoration: underline;
+        }
+        .section__heading, .about-us__text, .about-us__img {
+            transition: transform 0.3s ease;
+        }
+
+        .section__heading:hover, .about-us__text:hover, .about-us__img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/" class="logo"><img src="image/logof1.png" alt="Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="/" class="nav__item">Strona główna</a></li>
+                <li><a href="/aktualności" class="nav__item">aktualności</a></li>
+                <li><a href="/wyścigi" class="nav__item">wyścigi</a></li>
+                <li><a href="/klasyfikacja" class="nav__item">Klasyfikacja</a></li>
+                <li><a href="/tory" class="nav__item">Tory</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="header">
+        <div class="header__title">
+            <p class="header__text">Adaptuj się z <span
+                    class="header__text--colorized">w
+                    najlepszymi</span>
+            </p>
+            <a href="/f1" class="header__cta">F1!</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="section about-us">
+            <h2 class="section__heading">Formula 1</h2>
+            <div class="about-us__textbox">
+                <p class="about-us__text">Formuła 1 to najwyższa klasa wyścigów samochodowych na świecie. Organizuje międzynarodową serię wyścigów na torach rundowych
+                    na różnych kontynentach. W tych zawodach rywalizują najbardziej utalentowani kierowcy z największymi producentami samochodów. Formuła 1 jest znana
+                    z ekscytujących prędkości, zaawansowanej technologii i dynamicznych zmagań na torze, co przyciąga miliony fanów z całego świata.</p>
+                <a href="/zespoły" class="about-us__text about-us__link">Zespoły!</a>
+            </div>
+    
+            <div class="about-us__box">
+                <img src="image/photo6.jpg" alt="ciąg bolidów"
+                    class="about-us__img about-us__img--desktop">
+                <img src="image/photo11.jpg" alt="bolid z 2022 merc"
+                    class="about-us__img">
+                <img src="image/photo12.jpg" alt="f1" class="about-us__img">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__icons">
+            <a href="#" class="footer__icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer__icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__icon"><i class="fab fa-twitter"></i></a>
+        <p class="footer__text">All rights reserved &copy; 2023 F1 Website | <a href="/privacy"
+                class="footer__link">Privacy Policy</a></p>
+    </footer>
+</body>
+
+</html>
